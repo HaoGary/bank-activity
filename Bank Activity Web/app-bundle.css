@@ -1,0 +1,690 @@
+:root {
+    /*銀行指定主色，請編輯這裡的顏色，請使用rgb格式 */
+    --bank-primary-color-rgb: 157, 57, 116;
+}
+
+/* 原色變數群 請勿移動 */
+:root {
+    --gray100: #ffffff;
+    --gray200: #f7f7f7;
+    --gray300: #ededed;
+    --gray400: #e1e1e1;
+    --gray500: #bdbdbd;
+    --gray600: #999999;
+    --gray700: #5d5d5d;
+    --gray800: #323232;
+    --box-shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    --bank-primary-color: rgb(var(--bank-primary-color-rgb));
+    /* --bank-primary-light-color: color-mix(in srgb, var(--bank-primary-color), #fff 90%); */
+    /* --bank-primary-light30-color: color-mix(in srgb, var(--bank-primary-color), #fff 70%); */
+    /* --bank-primary-drak-color: color-mix(in srgb, var(--bank-primary-color), #000 20%); */
+    --bank-primary-light-color: rgba(var(--bank-primary-color-rgb), 0.1);
+    --bank-primary-light30-color: rgba(var(--bank-primary-color-rgb), 0.3);
+    --bank-primary-drak-color: rgba(var(--bank-primary-color-rgb), 1.2);
+    --bank-primary-drak-color: color-mix(in srgb, var(--bank-primary-color), #000 20%);
+}
+
+/* 客製化顏色設定 */
+:root {
+    /* 頁面背景色 */
+    --main-mobile-bg: var(--bank-primary-color);
+    --main-desktop-bg: var(--bank-primary-light-color);
+    /* 銀行副標題文字顏色 */
+    --subjectTitle-mobile-text: var(--gray100);
+    --subjectTitle-desktop-text: var(--bank-primary-color);
+
+    /* 銀行卡片 標題背景色 */
+    --bankCard-subTitle-bg: var(--bank-primary-light-color);
+    /* 銀行卡片 標題文字顏色 */
+    --bankCard-subTitle-text: var(--gray800);
+
+    /* 銀行卡片 主標題顏色 */
+    --bankCard-title-text: var(--bank-primary-color);
+    /* 銀行卡片 名額文字顏色 */
+    --bankCard-quotaNumber-text: var(--gray800);
+
+    /* 銀行卡片 按鈕背景色 */
+    --bankCard-btn-bg-active: var(--bank-primary-color);
+    /* 銀行卡片 按鈕文字顏色 */
+    --bankCard-btn-text-active: var(--gray100);
+
+    /* 銀行卡片 不可使用的按鈕背景色 */
+    --bankCard-btn-bg-disable: var(--bank-primary-light30-color);
+    /* 銀行卡片 不可使用的按鈕文字顏色 */
+    --bankCard-btn-text-disable: var(--gray100);
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: PingFangTC-regular, LiHei Pro, -apple-system,
+        BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+        Source Han Sans TC, Microsoft JhengHei, sans-serif, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+img {
+    object-position: center center;
+    overflow: clip;
+    object-fit: cover;
+    border-style: none;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logoHeader {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+}
+
+.etmallLogo {
+    height: 30px;
+    margin-right: 5px;
+}
+
+.closeLogo {
+    width: 24px;
+    height: 24px;
+}
+
+.bankLogo {
+    height: 30px;
+}
+
+.featureHeader {
+    display: none;
+}
+
+.record,
+.share {
+    display: inline-flex;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s all ease-in;
+}
+
+.record:hover,
+.share:hover {
+    background-color: var(--bank-primary-light-color);
+}
+
+.featureHeader .record img,
+.featureHeader .share img {
+    width: 20px;
+    height: 20px;
+}
+
+.contentContainer {
+    width: 100%;
+    background-color: var(--main-mobile-bg);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    min-height: 519px;
+}
+
+.content {
+    width: 100%;
+    max-width: 960px;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.content.active {
+    display: flex;
+}
+
+.contentContainer .content:last-child {
+    margin-bottom: 30px;
+}
+
+.subjectTitle {
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--subjectTitle-mobile-text);
+    margin-bottom: 15px;
+}
+
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 98%;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: var(--box-shadow-sm);
+    border: solid 1px var(--gray400);
+    background-color: var(--gray100);
+    box-sizing: border-box;
+    color: var(--gray800);
+    transition: 0.2s all ease-in;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translate(2px, -5px);
+    box-shadow: 0px 3.75px 11px 0px rgba(0, 0, 0, 0.19), 0px 0.5px 5px 0px rgba(0, 0, 0, 0.04);
+}
+
+
+.subTitle {
+    border-radius: 6px;
+    background-color: var(--bankCard-subTitle-bg);
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.subTitle span {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--bankCard-subTitle-text);
+    text-align: center;
+    word-wrap: break-word;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    padding: 5px;
+}
+
+.mainTitle {
+    margin: 10px 0;
+    max-height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainTitle span {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--bankCard-title-text);
+    word-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.amountContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    height: 1px;
+    background-color: var(--bank-primary-color);
+}
+
+.amount {
+    padding: 0px 10px;
+    flex-shrink: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.amount span {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 5px 5px;
+    color: var(--bankCard-quotaNumber-text);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    color: var(--bankCard-btn-text-disable);
+    width: calc(100% - 30px);
+    cursor: pointer;
+    background-color: var(--bankCard-btn-bg-disable);
+}
+
+.btn.active {
+    background-color: var(--bankCard-btn-bg-active);
+    transition: 0.3s all ease-in;
+    color: var(--bankCard-btn-text-active);
+}
+
+.btn.active:hover,
+.btn.active:active,
+.btn.active:focus {
+    background-color: var(--bank-primary-drak-color);
+    color: var(--bankCard-btn-text-active);
+}
+
+.time {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    color: var(--gray800);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.remaining {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    color: var(--gray800);
+    padding: 2px 10px;
+    margin-top: 5px;
+    background-color: var(--gray200);
+    flex-shrink: 0;
+    border-radius: 6px;
+    align-items: center;
+}
+
+.remaining span {
+    font-weight: bold;
+}
+
+.bannerContainer {
+    width: 100%;
+    height: auto;
+    background-color: var(--bank-primary-color);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    padding-top: calc(164 / 375 * 100%);
+}
+
+.bannerContainer .bannerMiddle {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.bannerContainer .bannerLarge {
+    display: none;
+    visibility: hidden;
+}
+
+.info {
+    box-sizing: border-box;
+    background: var(--gray700);
+    color: var(--gray100);
+    padding: 15px;
+    width: 100%;
+}
+
+.infoTitle {
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.infoList {
+    font-size: 16px;
+    max-width: 92%;
+    margin: 0 auto;
+}
+
+.infoList ol {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.infoList ol li {
+    line-height: 24px;
+}
+
+.notification {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: var(--gray100);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--gray800);
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.mobileRecord {
+    position: fixed;
+    bottom: 0;
+    left: calc(100% / 2 - 88.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./images/bg-inquirebtn.svg');
+    width: 179px;
+    height: 44px;
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    -webkit-filter: drop-shadow(0px -1px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0px -1px 4px rgba(0, 0, 0, 0.4));
+}
+
+.mobileRecord .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.mobileRecord .text {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: var(--gray800);
+}
+
+/* =================================================== */
+
+@media screen and (min-width: 576px) {
+    .contentContainer {
+        background-color: var(--main-desktop-bg);
+    }
+
+    .subjectTitle {
+        color: var(--subjectTitle-desktop-text);
+    }
+
+    .content {
+        padding: 30px 15px 30px 15px;
+    }
+
+    /* .cardContainer {
+        justify-content: space-between;
+    } */
+
+    .card {
+        width: calc(50% - 22.5px);
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card:nth-child(2n) {
+        margin-right: 0px;
+    }
+
+    .cardContainer .card:last-child {
+        margin-right: 0;
+    }
+
+    .mainTitle {
+        min-height: 144px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        height: 60px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .logoHeader {
+        order: 1;
+        cursor: pointer;
+        width: auto;
+    }
+
+    .featureHeader {
+        order: 2;
+        height: 60px;
+        display: flex;
+    }
+
+    .record span,
+    .share span {
+        font-size: 13px;
+        text-align: center;
+        color: var(--gray800);
+        padding-left: 6px;
+    }
+
+    .share {
+        cursor: pointer;
+    }
+
+    .record {
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 30px 15px;
+    }
+
+    .cardContainer {
+        max-width: 600px;
+        justify-content: flex-start;
+    }
+
+    .btn {
+        width: calc(100% - 60px);
+    }
+
+    .mainTitle {
+        height: 129px;
+    }
+
+    .mainTitle span {
+        font-size: 32px;
+    }
+
+    .info {
+        padding: 30px 30px 60px;
+    }
+
+    .infoTitle {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .infoList {
+        max-width: 900px;
+    }
+
+    .notification {
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .mobileRecord {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .bannerContainer {
+        padding: 0px;
+        min-height: 240px;
+    }
+
+    .bannerContainer .bannerLarge {
+        display: block;
+        height: 500px;
+        overflow: clip;
+        object-fit: cover;
+        object-position: center center;
+        border-style: none;
+        visibility: visible;
+    }
+
+    .bannerContainer .bannerMiddle {
+        display: none;
+    }
+
+    .cardContainer {
+        max-width: 960px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card {
+        width: calc(33.33% - 10px);
+    }
+
+    .card:nth-child(2n) {
+        margin-right: 15px;
+    }
+
+    .card:nth-child(3n) {
+        margin-right: 0px;
+    }
+
+}
+
+@media screen and (min-width: 1020px) {
+    .content {
+        width: 960px;
+    }
+
+    .cardContainer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cardContainer.flexStart {
+        justify-content: flex-start;
+    }
+}
